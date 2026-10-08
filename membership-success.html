@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Registration Successful — Agro Trade Hub Africa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="policy.css">
+  <link rel="stylesheet" href="footer.css">
+
+  <meta
+    name="description"
+    content="Your Agro Trade Hub Africa membership registration has been successfully completed."
+  >
+
+  <style>
+    :root {
+      --deep-green: #0A3D33;
+      --dark-green: #061A14;
+      --green: #087443;
+      --light-green: #C8EA80;
+      --soft-green: #F6F8F6;
+      --white: #ffffff;
+      --text: #17231f;
+      --muted: #66736e;
+      --border: #dfe8e3;
+      --shadow: 0 24px 70px rgba(6, 26, 20, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(200, 234, 128, 0.18),
+          transparent 34%
+        ),
+        linear-gradient(
+          135deg,
+          #f8fbf9 0%,
+          #f1f7f4 100%
+        );
+
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-header {
+      width: 100%;
+      padding: 24px 6%;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--deep-green);
+      font-size: 1.05rem;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--deep-green);
+      color: var(--light-green);
+      font-size: 0.85rem;
+      font-weight: 900;
+    }
+
+    main {
+      width: 100%;
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 40px 20px 80px;
+    }
+
+    .success-card {
+      width: min(720px, 100%);
+      background: var(--white);
+      border: 1px solid rgba(10, 61, 51, 0.08);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .success-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--deep-green),
+          var(--green),
+          var(--light-green)
+        );
+    }
+
+    .success-icon {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 26px;
+      border-radius: 50%;
+      background: rgba(8, 116, 67, 0.1);
+      display: grid;
+      place-items: center;
+      color: var(--green);
+    }
+
+    .success-icon svg {
+      width: 42px;
+      height: 42px;
+      stroke: currentColor;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      color: var(--deep-green);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .member-details {
+      margin: 36px 0;
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--soft-green);
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .detail-row:first-child {
+      padding-top: 0;
+    }
+
+    .detail-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .detail-value {
+      color: var(--deep-green);
+      font-weight: 750;
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .documents {
+      margin-top: 34px;
+      text-align: left;
+    }
+
+    .documents-title {
+      text-align: center;
+      color: var(--deep-green);
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .documents-subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+    }
+
+    .document-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .document-button {
+      width: 100%;
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--deep-green);
+      cursor: pointer;
+
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
+    }
+
+    .document-button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(8, 116, 67, 0.3);
+      box-shadow:
+        0 12px 30px rgba(6, 26, 20, 0.08);
+      background: #fbfdfb;
+    }
+
+    .document-icon {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(200, 234, 128, 0.28);
+      color: var(--deep-green);
+    }
+
+    .document-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .document-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .document-name {
+      display: block;
+      font-weight: 800;
+      font-size: 0.94rem;
+      margin-bottom: 3px;
+    }
+
+    .document-description {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .download-icon {
+      flex: 0 0 auto;
+      color: var(--green);
+    }
+
+    .download-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .no-documents {
+      display: none;
+      padding: 18px;
+      border-radius: 14px;
+      background: #fff8e8;
+      color: #795b13;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .actions {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 750;
+      font-size: 0.9rem;
+
+      transition:
+        transform 180ms ease,
+        opacity 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--deep-green);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: #eef4f1;
+      color: var(--deep-green);
+    }
+
+    .footer-note {
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .loading {
+      padding: 50px 20px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .error-state {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .page-header {
+        padding: 20px;
+      }
+
+      main {
+        padding: 20px 14px 50px;
+      }
+
+      .success-card {
+        padding: 38px 20px;
+        border-radius: 22px;
+      }
+
+      .detail-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .detail-value {
+        text-align: left;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">ATH</span>
+      <span>Agro Trade Hub Africa</span>
+    </a>
+  </header>
+
+  <main>
+
+    <section class="success-card" id="successCard">
+
+      <div class="loading" id="loadingState">
+        Loading your registration...
+      </div>
+
+      <div id="successContent" hidden>
+
+        <div class="success-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+        </div>
+
+        <div class="eyebrow">
+          Registration Complete
+        </div>
+
+        <h1>
+          Registration Successful
+        </h1>
+
+        <p class="intro" id="welcomeMessage">
+          Congratulations. Your Agro Trade Hub Africa membership
+          registration has been successfully completed.
+        </p>
+
+        <div class="member-details">
+
+          <div class="detail-row">
+            <span class="detail-label">
+              Membership Type
+            </span>
+
+            <span
+              class="detail-value"
+              id="membershipType"
+            >
+              —
+            </span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">
+              Membership ID
+            </span>
+
+            <span
+              class="detail-value"
+              id="membershipId"
+            >
+              —
+            </span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">
+              Certificate Number
+            </span>
+
+            <span
+              class="detail-value"
+              id="certificateNumber"
+            >
+              —
+            </span>
+          </div>
+
+        </div>
+
+        <div class="documents">
+
+          <h2 class="documents-title">
+            Your Membership Documents
+          </h2>
+
+          <p class="documents-subtitle">
+            Your official documents are ready.
+            Click a document to open it.
+          </p>
+
+          <div
+            class="document-list"
+            id="documentList"
+          >
+
+            <a
+              class="document-button"
+              id="certificateButton"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              <span class="document-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+
+                  <path d="M14 2v6h6"></path>
+                  <path d="M8 13h8"></path>
+                  <path d="M8 17h6"></path>
+                </svg>
+              </span>
+
+              <span class="document-info">
+                <span class="document-name">
+                  Membership Certificate
+                </span>
+
+                <span class="document-description">
+                  Your official Agro Trade Hub Africa membership certificate
+                </span>
+              </span>
+
+              <span class="download-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+              </span>
+            </a>
+
+            <a
+              class="document-button"
+              id="farmerIdButton"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              <span class="document-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="2"
+                  ></rect>
+
+                  <circle
+                    cx="8"
+                    cy="12"
+                    r="2"
+                  ></circle>
+
+                  <path d="M13 10h5"></path>
+                  <path d="M13 14h4"></path>
+                </svg>
+              </span>
+
+              <span class="document-info">
+                <span class="document-name">
+                  Farmer ID Card
+                </span>
+
+                <span class="document-description">
+                  Your official Agro Trade Hub Africa farmer identification card
+                </span>
+              </span>
+
+              <span class="download-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+              </span>
+            </a>
+
+          </div>
+
+          <div
+            class="no-documents"
+            id="noDocuments"
+          >
+            Your registration was completed successfully, but your
+            documents are not available yet. Please contact Agro Trade
+            Hub Africa support.
+          </div>
+
+        </div>
+
+        <div class="actions">
+
+          <a
+            href="membership.html"
+            class="btn btn-secondary"
+          >
+            Back to Membership
+          </a>
+
+          <a
+            href="index.html"
+            class="btn btn-primary"
+          >
+            Return Home
+          </a>
+
+        </div>
+
+        <p class="footer-note">
+          Please save your Membership ID and keep your downloaded
+          documents safely for future verification.
+        </p>
+
+      </div>
+
+      <div
+        class="error-state"
+        id="errorState"
+      >
+
+        <div class="success-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+            ></circle>
+
+            <path d="M12 8v4"></path>
+            <path d="M12 16h.01"></path>
+          </svg>
+        </div>
+
+        <div class="eyebrow">
+          Registration Information
+        </div>
+
+        <h1>
+          Registration Completed
+        </h1>
+
+        <p class="intro">
+          Your payment may have been completed, but we could not load
+          your membership documents. Please return to the membership
+          page or contact Agro Trade Hub Africa support.
+        </p>
+
+        <div class="actions">
+
+          <a
+            href="membership.html"
+            class="btn btn-primary"
+          >
+            Return to Membership
+          </a>
+
+          <a
+            href="index.html"
+            class="btn btn-secondary"
+          >
+            Return Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img class="footer-brand-logo" src="images/Ath2.jpeg" alt="Agro Trade Hub Africa logo" width="56" height="56">
+          <p class="wordmark footer-word">Agro Trade <span>Hub Africa</span></p>
+        </div>
+        <p>An initiative of Verneldos Global Services Ltd &amp; Ntonarche Acumen Network.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="programs.html">Programs</a>
+        <a href="membership.html">Membership</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+      <div>
+        <h4>Social media</h4>
+        <div class="footer-socials" aria-label="Agro Trade Hub Africa social media links">
+          <a class="social-icon" href="https://web.facebook.com/ATHALTD/#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a class="social-icon" href="https://www.instagram.com/agrotradehubafrica/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a class="social-icon" href="https://www.linkedin.com/company/146681279/admin/dashboard/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a class="social-icon" href="https://chat.whatsapp.com/IZgIjS7drH76raPpclbS1E" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+          <a class="social-icon" href="https://t.me/atha3752" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+          <a class="social-icon" href="https://www.youtube.com/channel/UC3WOC_rURSkI4AHO_O1oyGA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="contact.html">Contact form</a>
+        <a href="contact.html#locations">Office locations</a>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <div class="policy-links">
+          <button type="button" data-policy="privacy">Privacy policy</button>
+          <button type="button" data-policy="cookies">Cookie policy</button>
+          <button type="button" data-policy="payments">Payment and refund policy</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>&copy; 2026 Agro Trade Hub Africa.</p>
+      <div class="footer-credit">
+        <p><strong>Site is designed and maintained by NTONARCH ACUMEN NETWORK</strong></p>
+        <p><a href="https://www.ntonarch.com" target="_blank" rel="noopener">www.ntonarch.com</a> | <a href="mailto:ntonarch@gmail.com">ntonarch@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="policy-dialog" id="policyDialog" aria-labelledby="policyTitle">
+    <div class="policy-dialog-content">
+      <button class="policy-close" id="policyClose" type="button" aria-label="Close policy"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <h2 id="policyTitle"></h2>
+      <div id="policyBody"></div>
+    </div>
+  </dialog>
+
+  <script src="policy.js"></script>
+
+  <script>
+    const API_BASE_URL =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1"
+        ? "http://localhost:5000/api"
+        : "https://YOUR-BACKEND.onrender.com/api";
+
+    const MEMBERSHIP_NAMES = {
+      farmer: "Farmer Membership",
+
+      "cooperative-new":
+        "New Cooperative Membership",
+
+      "cooperative-old":
+        "Cooperative Membership Revalidation",
+
+      partner:
+        "Partner Membership",
+
+      investor:
+        "Investor Membership"
+    };
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+    const registrationId =
+      params.get("registration");
+
+    const paymentStatus =
+      params.get("payment");
+
+    const loadingState =
+      document.getElementById(
+        "loadingState"
+      );
+
+    const successContent =
+      document.getElementById(
+        "successContent"
+      );
+
+    const errorState =
+      document.getElementById(
+        "errorState"
+      );
+
+    const membershipType =
+      document.getElementById(
+        "membershipType"
+      );
+
+    const membershipId =
+      document.getElementById(
+        "membershipId"
+      );
+
+    const certificateNumber =
+      document.getElementById(
+        "certificateNumber"
+      );
+
+    const certificateButton =
+      document.getElementById(
+        "certificateButton"
+      );
+
+    const farmerIdButton =
+      document.getElementById(
+        "farmerIdButton"
+      );
+
+    const noDocuments =
+      document.getElementById(
+        "noDocuments"
+      );
+
+    const welcomeMessage =
+      document.getElementById(
+        "welcomeMessage"
+      );
+
+    function showError() {
+      loadingState.hidden = true;
+      successContent.hidden = true;
+      errorState.style.display = "block";
+    }
+
+    function showSuccess() {
+      loadingState.hidden = true;
+      successContent.hidden = false;
+      errorState.style.display = "none";
+    }
+
+    function setupDocumentButton(
+      button,
+      documentData
+    ) {
+      if (!documentData?.url) {
+        button.hidden = true;
+        return false;
+      }
+
+      /*
+       * IMPORTANT:
+       *
+       * Do NOT use the HTML `download`
+       * attribute here.
+       *
+       * Cloudinary raw PDFs should be opened
+       * directly in a new browser tab.
+       */
+      button.href = documentData.url;
+
+      button.removeAttribute("download");
+
+      button.target = "_blank";
+
+      button.rel =
+        "noopener noreferrer";
+
+      button.hidden = false;
+
+      return true;
+    }
+
+    async function loadRegistration() {
+
+      if (
+        paymentStatus !== "success" ||
+        !registrationId
+      ) {
+        showError();
+        return;
+      }
+
+      try {
+
+        const endpoint =
+          `${API_BASE_URL}/payments/registration/` +
+          `${encodeURIComponent(
+            registrationId
+          )}/documents`;
+
+        const response =
+          await fetch(endpoint);
+
+        let result;
+
+        try {
+          result =
+            await response.json();
+        } catch {
+          throw new Error(
+            "Invalid response from server"
+          );
+        }
+
+        if (
+          !response.ok ||
+          !result.success ||
+          !result.registration
+        ) {
+          throw new Error(
+            result.message ||
+            "Could not load registration"
+          );
+        }
+
+        const registration =
+          result.registration;
+
+        const name =
+          registration.name ||
+          registration["contact-name"] ||
+          registration.contactName ||
+          registration.fullName ||
+          registration.org ||
+          "Member";
+
+        const type =
+          registration.type;
+
+        membershipType.textContent =
+          MEMBERSHIP_NAMES[type] ||
+          "Agro Trade Hub Africa Membership";
+
+        membershipId.textContent =
+          registration.membershipId ||
+          "—";
+
+        certificateNumber.textContent =
+          registration.certificateNumber ||
+          "—";
+
+        welcomeMessage.textContent =
+          `Congratulations, ${name}. ` +
+          `Your Agro Trade Hub Africa membership ` +
+          `registration has been successfully completed.`;
+
+        let documentCount = 0;
+
+        if (
+          setupDocumentButton(
+            certificateButton,
+            registration.documents?.certificate
+          )
+        ) {
+          documentCount++;
+        }
+
+        if (
+          type === "farmer" &&
+          setupDocumentButton(
+            farmerIdButton,
+            registration.documents?.farmerIdCard
+          )
+        ) {
+          documentCount++;
+        } else {
+          farmerIdButton.hidden = true;
+        }
+
+        if (documentCount === 0) {
+          noDocuments.style.display = "block";
+        } else {
+          noDocuments.style.display = "none";
+        }
+
+        showSuccess();
+
+      } catch (error) {
+
+        console.error(
+          "Could not load membership documents:",
+          error
+        );
+
+        showError();
+      }
+    }
+
+    loadRegistration();
+  </script>
+
+</body>
+</html>
