@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A3D33">
+
+    <title>Registration Successful | Agro Trade Hub</title>
+
+    <style>
+        :root {
+            --primary: #0A3D33;
+            --primary-dark: #061A14;
+            --green: #087443;
+            --yellow: #F4D500;
+            --background: #F6F8F6;
+            --white: #FFFFFF;
+            --text: #17231D;
+            --muted: #66736B;
+            --border: #E0E8E2;
+            --danger: #B42318;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .brand {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .brand-mark {
+            display: inline-flex;
+            width: 54px;
+            height: 54px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 16px;
+            background: var(--primary);
+            color: var(--yellow);
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .brand h1 {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .brand p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--white);
+            box-shadow: 0 12px 40px rgba(6, 26, 20, 0.07);
+        }
+
+        .hero {
+            padding: 36px 24px;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .success-icon {
+            display: flex;
+            width: 68px;
+            height: 68px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border: 2px solid rgba(244, 213, 0, 0.5);
+            border-radius: 50%;
+            background: rgba(244, 213, 0, 0.12);
+            color: var(--yellow);
+            font-size: 35px;
+        }
+
+        .hero h2 {
+            margin-bottom: 8px;
+            font-size: clamp(23px, 4vw, 31px);
+            line-height: 1.25;
+        }
+
+        .hero p {
+            max-width: 490px;
+            margin: 0 auto;
+            color: #E2EEE7;
+            font-size: 15px;
+        }
+
+        .content {
+            padding: 28px;
+        }
+
+        .section-title {
+            margin-bottom: 16px;
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .member-details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .detail {
+            min-width: 0;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #FAFCFA;
+        }
+
+        .detail.full {
+            grid-column: 1 / -1;
+        }
+
+        .detail-label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            display: block;
+            overflow-wrap: anywhere;
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .documents-section {
+            margin-top: 8px;
+        }
+
+        .documents-intro {
+            margin: -8px 0 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .document-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .document-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 17px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .document-item.hidden,
+        .hidden {
+            display: none !important;
+        }
+
+        .document-info {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .document-icon {
+            display: flex;
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #EAF5EE;
+            color: var(--green);
+            font-size: 22px;
+        }
+
+        .document-info h4 {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .document-info p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 43px;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border: 0;
+            border-radius: 9px;
+            background: var(--green);
+            color: var(--white);
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--primary);
+        }
+
+        .button:focus-visible {
+            outline: 3px solid var(--yellow);
+            outline-offset: 3px;
+        }
+
+        .button.secondary {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .button.secondary:hover {
+            background: #F0F5F1;
+        }
+
+        .notice {
+            margin-top: 18px;
+            padding: 15px;
+            border: 1px solid #D5E8D9;
+            border-radius: 12px;
+            background: #F0F8F1;
+            color: #245B35;
+            font-size: 13px;
+        }
+
+        .notice.warning {
+            border-color: #F0DE9B;
+            background: #FFF9E5;
+            color: #755A00;
+        }
+
+        .notice.error {
+            border-color: #F1C7C4;
+            background: #FFF3F2;
+            color: var(--danger);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .actions .button {
+            flex: 1;
+        }
+
+        .status-panel {
+            padding: 44px 24px;
+            text-align: center;
+        }
+
+        .loader {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 18px;
+            border: 4px solid #DCE8DF;
+            border-top-color: var(--green);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .status-panel h2 {
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 22px;
+        }
+
+        .status-panel p {
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer {
+            padding: 22px 12px 0;
+            color: var(--muted);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 18px 12px;
+                align-items: flex-start;
+            }
+
+            .brand {
+                margin-bottom: 18px;
+            }
+
+            .hero {
+                padding: 30px 18px;
+            }
+
+            .content {
+                padding: 21px 16px;
+            }
+
+            .member-details {
+                gap: 9px;
+            }
+
+            .detail {
+                padding: 12px;
+            }
+
+            .detail-value {
+                font-size: 13px;
+            }
+
+            .document-item {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .document-item .button {
+                width: 100%;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .actions .button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+        <header class="brand">
+            <div class="brand-mark" aria-hidden="true">A</div>
+            <h1>Agro Trade Hub</h1>
+            <p>Connecting Agriculture. Empowering Communities.</p>
+        </header>
+
+        <section class="card" aria-live="polite">
+            <!-- LOADING -->
+            <div id="loadingState" class="status-panel">
+                <div class="loader" aria-hidden="true"></div>
+                <h2>Confirming Your Registration</h2>
+                <p>Please wait while we retrieve your membership details and documents.</p>
+            </div>
+
+            <!-- SUCCESS -->
+            <div id="successContent" class="hidden">
+                <div class="hero">
+                    <div class="success-icon" aria-hidden="true">✓</div>
+                    <h2>Registration Successful!</h2>
+                    <p id="welcomeMessage">
+                        Your membership details are ready.
+                    </p>
+                </div>
+
+                <div class="content">
+                    <h3 class="section-title">Your Membership Details</h3>
+
+                    <div class="member-details">
+                        <div class="detail full">
+                            <span class="detail-label">Full Name</span>
+                            <span class="detail-value" id="memberName">—</span>
+                        </div>
+
+                        <div class="detail">
+                            <span class="detail-label">Membership Type</span>
+                            <span class="detail-value" id="membershipType">—</span>
+                        </div>
+
+                        <div class="detail">
+                            <span class="detail-label">Membership ID</span>
+                            <span class="detail-value" id="membershipId">—</span>
+                        </div>
+
+                        <div class="detail full">
+                            <span class="detail-label">Certificate Number</span>
+                            <span class="detail-value" id="certificateNumber">—</span>
+                        </div>
+                    </div>
+
+                    <section class="documents-section">
+                        <h3 class="section-title">Your Membership Documents</h3>
+
+                        <p class="documents-intro">
+                            Your available documents are listed below. Select the appropriate button to open your PDF.
+                        </p>
+
+                        <div class="document-list">
+                            <!-- CERTIFICATE -->
+                            <div id="certificateItem" class="document-item hidden">
+                                <div class="document-info">
+                                    <div class="document-icon" aria-hidden="true">▤</div>
+                                    <div>
+                                        <h4>Membership Certificate</h4>
+                                        <p>Your official membership certificate</p>
+                                    </div>
+                                </div>
+
+                                <a
+                                    id="certificateButton"
+                                    class="button"
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Certificate ↗
+                                </a>
+                            </div>
+
+                            <!-- FARMER ID -->
+                            <div id="farmerIdItem" class="document-item hidden">
+                                <div class="document-info">
+                                    <div class="document-icon" aria-hidden="true">▣</div>
+                                    <div>
+                                        <h4>Farmer ID Card</h4>
+                                        <p>Your farmer membership identification</p>
+                                    </div>
+                                </div>
+
+                                <a
+                                    id="farmerIdButton"
+                                    class="button"
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Farmer ID ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="noDocuments" class="notice warning hidden">
+                            Your registration was retrieved, but no documents are available yet.
+                        </div>
+
+                        <div id="documentsPendingNotice" class="notice warning hidden">
+                            Your registration is confirmed, but your documents are still being prepared. Please try again shortly.
+                        </div>
+
+                        <div id="successNotice" class="notice hidden">
+                            Your membership information and available documents have been retrieved successfully.
+                        </div>
+                    </section>
+
+                    <div class="actions">
+                        <button id="retryButton" class="button secondary hidden" type="button">
+                            Retry Loading Documents
+                        </button>
+
+                        <a class="button secondary" href="index.html">
+                            Return to Homepage
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERROR -->
+            <div id="errorState" class="status-panel hidden">
+                <div class="success-icon" style="color: #B42318; border-color: #F1C7C4; background: #FFF3F2;" aria-hidden="true">!</div>
+                <h2>Unable to Load Registration</h2>
+                <p id="errorMessage">
+                    We could not retrieve your registration details.
+                </p>
+
+                <button id="retryErrorButton" class="button" type="button">
+                    Try Again
+                </button>
+
+                <div style="margin-top: 14px;">
+                    <a class="button secondary" href="index.html">
+                        Return to Homepage
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            &copy; <span id="currentYear"></span> Agro Trade Hub. All rights reserved.
+        </footer>
+    </main>
+
+    <script>
+        "use strict";
+
+        // Correct production API base URL.
+        const API_BASE_URL = "https://agtechbe.onrender.com/api";
+
+        const elements = {
+            loadingState: document.getElementById("loadingState"),
+            successContent: document.getElementById("successContent"),
+            errorState: document.getElementById("errorState"),
+            errorMessage: document.getElementById("errorMessage"),
+
+            memberName: document.getElementById("memberName"),
+            welcomeMessage: document.getElementById("welcomeMessage"),
+            membershipType: document.getElementById("membershipType"),
+            membershipId: document.getElementById("membershipId"),
+            certificateNumber: document.getElementById("certificateNumber"),
+
+            certificateItem: document.getElementById("certificateItem"),
+            certificateButton: document.getElementById("certificateButton"),
+
+            farmerIdItem: document.getElementById("farmerIdItem"),
+            farmerIdButton: document.getElementById("farmerIdButton"),
+
+            noDocuments: document.getElementById("noDocuments"),
+            documentsPendingNotice: document.getElementById("documentsPendingNotice"),
+            successNotice: document.getElementById("successNotice"),
+
+            retryButton: document.getElementById("retryButton"),
+            retryErrorButton: document.getElementById("retryErrorButton"),
+            currentYear: document.getElementById("currentYear")
+        };
+
+        elements.currentYear.textContent = new Date().getFullYear();
+
+        const params = new URLSearchParams(window.location.search);
+        const registrationId = params.get("registration");
+        const paymentStatus = params.get("payment");
+
+        function showOnly(state) {
+            elements.loadingState.classList.add("hidden");
+            elements.successContent.classList.add("hidden");
+            elements.errorState.classList.add("hidden");
+
+            state.classList.remove("hidden");
+        }
+
+        function formatMembershipType(type) {
+            if (!type) return "—";
+
+            const names = {
+                farmer: "Farmer",
+                business: "Business",
+                group: "Group",
+                cooperative: "Cooperative",
+                partnership: "Partnership",
+                partner: "Partner",
+                investor: "Investor",
+                sponsor: "Sponsor"
+            };
+
+            const normalized = String(type).trim().toLowerCase();
+
+            return names[normalized] ||
+                normalized.replace(/[-_]/g, " ")
+                    .replace(/\b\w/g, character => character.toUpperCase());
+        }
+
+        function setDocumentLink(item, button, documentData, buttonText) {
+            // Never display a document button without a valid URL from the API.
+            const url = documentData?.url;
+
+            if (typeof url !== "string" || !url.trim()) {
+                item.classList.add("hidden");
+                button.removeAttribute("href");
+                return false;
+            }
+
+            try {
+                const parsedUrl = new URL(url);
+
+                // Membership PDFs should be served over HTTPS.
+                if (parsedUrl.protocol !== "https:") {
+                    item.classList.add("hidden");
+                    button.removeAttribute("href");
+                    console.error("Rejected non-HTTPS document URL.");
+                    return false;
+                }
+
+                // Use the actual Cloudinary URL returned by the backend.
+                button.href = parsedUrl.href;
+                button.target = "_blank";
+                button.rel = "noopener noreferrer";
+                button.textContent = buttonText;
+
+                item.classList.remove("hidden");
+                return true;
+            } catch (error) {
+                item.classList.add("hidden");
+                button.removeAttribute("href");
+                console.error("Invalid document URL:", error);
+                return false;
+            }
+        }
+
+        function displayRegistration(registration, documentsReady) {
+            if (!registration || typeof registration !== "object") {
+                throw new Error("The API response did not contain registration details.");
+            }
+
+            const documents = registration.documents || {};
+
+            // Display the actual registration details returned by the API.
+            elements.memberName.textContent = registration.name || "Member";
+            elements.membershipType.textContent =
+                formatMembershipType(registration.type);
+
+            elements.membershipId.textContent =
+                registration.membershipId || "Not available";
+
+            elements.certificateNumber.textContent =
+                registration.certificateNumber ||
+                documents.certificate?.certificateNumber ||
+                "Not available";
+
+            elements.welcomeMessage.textContent =
+                `Welcome, ${registration.name || "member"}! Your registration details have been retrieved.`;
+
+            // Reset document state before processing the latest response.
+            elements.certificateItem.classList.add("hidden");
+            elements.farmerIdItem.classList.add("hidden");
+            elements.noDocuments.classList.add("hidden");
+            elements.documentsPendingNotice.classList.add("hidden");
+            elements.successNotice.classList.add("hidden");
+            elements.retryButton.classList.add("hidden");
+
+            // Extract each PDF URL from its correct location in the API response.
+            const certificateAvailable = setDocumentLink(
+                elements.certificateItem,
+                elements.certificateButton,
+                documents.certificate,
+                "View Certificate ↗"
+            );
+
+            const farmerIdAvailable = setDocumentLink(
+                elements.farmerIdItem,
+                elements.farmerIdButton,
+                documents.farmerIdCard,
+                "View Farmer ID ↗"
+            );
+
+            const hasDocuments = certificateAvailable || farmerIdAvailable;
+
+            if (hasDocuments) {
+                elements.successNotice.classList.remove("hidden");
+            } else if (documentsReady === false) {
+                elements.documentsPendingNotice.classList.remove("hidden");
+                elements.retryButton.classList.remove("hidden");
+            } else {
+                elements.noDocuments.classList.remove("hidden");
+                elements.retryButton.classList.remove("hidden");
+            }
+
+            showOnly(elements.successContent);
+        }
+
+        async function loadRegistration() {
+            showOnly(elements.loadingState);
+
+            if (!registrationId) {
+                elements.errorMessage.textContent =
+                    "The registration ID is missing from the page URL. Please return to the payment confirmation link.";
+
+                showOnly(elements.errorState);
+                return;
+            }
+
+            if (paymentStatus && paymentStatus !== "success") {
+                elements.errorMessage.textContent =
+                    "The payment status is not successful. Please confirm your payment before accessing your membership documents.";
+
+                showOnly(elements.errorState);
+                return;
+            }
+
+            // Exact working endpoint:
+            // GET /api/payments/registration/:registrationId/documents
+            console.log(registrationId)
+            const endpoint =
+                `${API_BASE_URL}/payments/registration/${encodeURIComponent(registrationId)}/documents`;
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json"
+                    },
+                    cache: "no-store"
+                });
+
+                const rawResponse = await response.text();
+
+                let result;
+
+                try {
+                    result = JSON.parse(rawResponse);
+                } catch {
+                    throw new Error(
+                        `The backend returned an invalid JSON response (HTTP ${response.status}).`
+                    );
+                }
+
+                console.log("Membership documents API response:", result);
+
+                if (!response.ok || result.success !== true) {
+                    throw new Error(
+                        result.message ||
+                        result.error ||
+                        `Unable to retrieve registration details (HTTP ${response.status}).`
+                    );
+                }
+
+                // Use the registration object from the confirmed API response.
+                displayRegistration(
+                    result.registration,
+                    result.documentsReady
+                );
+
+            } catch (error) {
+                console.error("Failed to load membership registration:", error);
+
+                elements.errorMessage.textContent =
+                    error.message ||
+                    "A network error occurred while retrieving your membership details.";
+
+                showOnly(elements.errorState);
+            }
+        }
+
+        // Both retry buttons call the same API-loading function.
+        elements.retryButton.addEventListener("click", loadRegistration);
+        elements.retryErrorButton.addEventListener("click", loadRegistration);
+
+        // Fetch the registration immediately when the page opens.
+        loadRegistration();
+    </script>
+</body>
+</html>
