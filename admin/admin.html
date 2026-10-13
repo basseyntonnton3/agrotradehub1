@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>ATH Admin Dashboard</title>
+
+  <link
+    rel="stylesheet"
+    href="./admin.css"
+  />
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <section
+    class="login-screen"
+    id="loginScreen"
+  >
+    <div class="login-card">
+
+      <div class="brand-mark">
+        ATH
+      </div>
+
+      <p class="eyebrow">
+        AGRO TRADE HUB AFRICA
+      </p>
+
+      <h1>
+        Admin Dashboard
+      </h1>
+
+      <p class="login-description">
+        Enter your administrator key to access
+        membership records.
+      </p>
+
+      <form id="loginForm">
+
+        <label for="adminKey">
+          Admin API Key
+        </label>
+
+        <input
+          type="password"
+          id="adminKey"
+          placeholder="Enter admin key"
+          autocomplete="current-password"
+          required
+        />
+
+        <button type="submit">
+          Access Dashboard
+        </button>
+
+      </form>
+
+      <p
+        class="login-error"
+        id="loginError"
+      ></p>
+
+    </div>
+  </section>
+
+
+  <!-- DASHBOARD -->
+  <main
+    class="dashboard hidden"
+    id="dashboard"
+  >
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+      <div>
+        <p class="eyebrow">
+          AGRO TRADE HUB AFRICA
+        </p>
+
+        <h1>
+          Membership Dashboard
+        </h1>
+      </div>
+
+      <div class="topbar-actions">
+
+        <button
+          class="secondary-button"
+          id="refreshButton"
+        >
+          ↻ Refresh
+        </button>
+
+        <button
+          class="logout-button"
+          id="logoutButton"
+        >
+          Logout
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- STATS -->
+    <section class="stats-grid">
+
+      <article class="stat-card">
+        <span>Total Registrations</span>
+        <strong id="totalCount">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Completed</span>
+        <strong id="completedCount">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Pending Payment</span>
+        <strong id="pendingCount">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Farmers</span>
+        <strong id="farmerCount">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Cooperatives</span>
+        <strong id="cooperativeCount">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Partners</span>
+        <strong id="partnerCount">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Investors</span>
+        <strong id="investorCount">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Sponsors</span>
+        <strong id="sponsorCount">0</strong>
+      </article>
+
+    </section>
+
+
+    <!-- REGISTRATIONS -->
+    <section class="registrations-section">
+
+      <div class="section-header">
+
+        <div>
+          <p class="eyebrow">
+            MEMBERS
+          </p>
+
+          <h2>
+            Registration Records
+          </h2>
+        </div>
+
+        <span
+          class="result-count"
+          id="resultCount"
+        >
+          0 records
+        </span>
+
+      </div>
+
+
+      <!-- FILTERS -->
+      <div class="filters">
+
+        <div class="search-box">
+
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search name, email, membership ID..."
+          />
+
+        </div>
+
+        <select id="typeFilter">
+
+          <option value="all">
+            All Types
+          </option>
+
+          <option value="farmer">
+            Farmers
+          </option>
+
+          <option value="cooperative-new">
+            New Cooperative
+          </option>
+
+          <option value="cooperative-old">
+            Existing Cooperative
+          </option>
+
+          <option value="partner">
+            Partners
+          </option>
+
+          <option value="investor">
+            Investors
+          </option>
+
+          <option value="sponsor">
+            Sponsors
+          </option>
+
+        </select>
+
+
+        <select id="statusFilter">
+
+          <option value="all">
+            All Statuses
+          </option>
+
+          <option value="completed">
+            Completed
+          </option>
+
+          <option value="paid">
+            Paid
+          </option>
+
+          <option value="pending">
+            Pending
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- TABLE -->
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Applicant</th>
+              <th>Type</th>
+              <th>Email</th>
+              <th>Membership ID</th>
+              <th>Payment</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+
+          </thead>
+
+          <tbody id="registrationsBody">
+
+            <tr>
+              <td
+                colspan="8"
+                class="empty-state"
+              >
+                Loading registrations...
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- DETAILS MODAL -->
+  <div
+    class="modal hidden"
+    id="detailsModal"
+  >
+
+    <div class="modal-backdrop"></div>
+
+    <div class="modal-card">
+
+      <div class="modal-header">
+
+        <div>
+          <p class="eyebrow">
+            REGISTRATION DETAILS
+          </p>
+
+          <h2 id="modalName">
+            Registration
+          </h2>
+        </div>
+
+        <button
+          class="close-button"
+          id="closeModal"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div
+        class="modal-content"
+        id="modalContent"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <script src="./admin.js"></script>
+
+</body>
+</html>

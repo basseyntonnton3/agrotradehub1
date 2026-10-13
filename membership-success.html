@@ -1,1036 +1,802 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A3D33">
 
-  <title>Registration Successful — Agro Trade Hub Africa</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="policy.css">
-  <link rel="stylesheet" href="footer.css">
+    <title>Registration Successful | Agro Trade Hub</title>
 
-  <meta
-    name="description"
-    content="Your Agro Trade Hub Africa membership registration has been successfully completed."
-  >
+    <style>
+        :root {
+            --primary: #0A3D33;
+            --primary-dark: #061A14;
+            --green: #087443;
+            --yellow: #F4D500;
+            --background: #F6F8F6;
+            --white: #FFFFFF;
+            --text: #17231D;
+            --muted: #66736B;
+            --border: #E0E8E2;
+            --danger: #B42318;
+        }
 
-  <style>
-    :root {
-      --deep-green: #0A3D33;
-      --dark-green: #061A14;
-      --green: #087443;
-      --light-green: #C8EA80;
-      --soft-green: #F6F8F6;
-      --white: #ffffff;
-      --text: #17231f;
-      --muted: #66736e;
-      --border: #dfe8e3;
-      --shadow: 0 24px 70px rgba(6, 26, 20, 0.12);
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            min-height: 100vh;
+            padding: 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
 
-    body {
-      min-height: 100vh;
-      font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
+        button,
+        a {
+            font: inherit;
+        }
 
-      background:
-        radial-gradient(
-          circle at top left,
-          rgba(200, 234, 128, 0.18),
-          transparent 34%
-        ),
-        linear-gradient(
-          135deg,
-          #f8fbf9 0%,
-          #f1f7f4 100%
-        );
+        .page {
+            width: 100%;
+            max-width: 760px;
+            margin: auto;
+        }
 
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-    }
+        .brand {
+            margin-bottom: 24px;
+            text-align: center;
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        .brand-mark {
+            display: inline-flex;
+            width: 54px;
+            height: 54px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 16px;
+            background: var(--primary);
+            color: var(--yellow);
+            font-size: 25px;
+            font-weight: 800;
+        }
 
-    .page-header {
-      width: 100%;
-      padding: 24px 6%;
-    }
+        .brand h1 {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 800;
+        }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--deep-green);
-      font-size: 1.05rem;
-    }
+        .brand p {
+            color: var(--muted);
+            font-size: 13px;
+        }
 
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: var(--deep-green);
-      color: var(--light-green);
-      font-size: 0.85rem;
-      font-weight: 900;
-    }
+        .card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--white);
+            box-shadow: 0 12px 40px rgba(6, 26, 20, 0.07);
+        }
 
-    main {
-      width: 100%;
-      flex: 1;
-      display: grid;
-      place-items: center;
-      padding: 40px 20px 80px;
-    }
+        .hero {
+            padding: 36px 24px;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
 
-    .success-card {
-      width: min(720px, 100%);
-      background: var(--white);
-      border: 1px solid rgba(10, 61, 51, 0.08);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 52px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+        .success-icon {
+            display: flex;
+            width: 68px;
+            height: 68px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border: 2px solid rgba(244, 213, 0, 0.5);
+            border-radius: 50%;
+            background: rgba(244, 213, 0, 0.12);
+            color: var(--yellow);
+            font-size: 35px;
+        }
 
-    .success-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background:
-        linear-gradient(
-          90deg,
-          var(--deep-green),
-          var(--green),
-          var(--light-green)
-        );
-    }
+        .hero h2 {
+            margin-bottom: 8px;
+            font-size: clamp(23px, 4vw, 31px);
+            line-height: 1.25;
+        }
 
-    .success-icon {
-      width: 82px;
-      height: 82px;
-      margin: 0 auto 26px;
-      border-radius: 50%;
-      background: rgba(8, 116, 67, 0.1);
-      display: grid;
-      place-items: center;
-      color: var(--green);
-    }
+        .hero p {
+            max-width: 490px;
+            margin: 0 auto;
+            color: #E2EEE7;
+            font-size: 15px;
+        }
 
-    .success-icon svg {
-      width: 42px;
-      height: 42px;
-      stroke: currentColor;
-    }
+        .content {
+            padding: 28px;
+        }
 
-    .eyebrow {
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--green);
-      margin-bottom: 12px;
-    }
+        .section-title {
+            margin-bottom: 16px;
+            color: var(--primary);
+            font-size: 18px;
+        }
 
-    h1 {
-      color: var(--deep-green);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      margin-bottom: 16px;
-    }
+        .member-details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
 
-    .intro {
-      max-width: 560px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
+        .detail {
+            min-width: 0;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #FAFCFA;
+        }
 
-    .member-details {
-      margin: 36px 0;
-      padding: 24px;
-      border-radius: 18px;
-      background: var(--soft-green);
-      border: 1px solid var(--border);
-      text-align: left;
-    }
+        .detail.full {
+            grid-column: 1 / -1;
+        }
 
-    .detail-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
+        .detail-label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-    .detail-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+        .detail-value {
+            display: block;
+            overflow-wrap: anywhere;
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 700;
+        }
 
-    .detail-row:first-child {
-      padding-top: 0;
-    }
+        .documents-section {
+            margin-top: 8px;
+        }
 
-    .detail-label {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
+        .documents-intro {
+            margin: -8px 0 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
 
-    .detail-value {
-      color: var(--deep-green);
-      font-weight: 750;
-      text-align: right;
-      word-break: break-word;
-    }
+        .document-list {
+            display: grid;
+            gap: 12px;
+        }
 
-    .documents {
-      margin-top: 34px;
-      text-align: left;
-    }
+        .document-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 17px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
 
-    .documents-title {
-      text-align: center;
-      color: var(--deep-green);
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
+        .document-item.hidden,
+        .hidden {
+            display: none !important;
+        }
 
-    .documents-subtitle {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 22px;
-    }
+        .document-info {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 13px;
+        }
 
-    .document-list {
-      display: grid;
-      gap: 12px;
-    }
+        .document-icon {
+            display: flex;
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #EAF5EE;
+            color: var(--green);
+            font-size: 22px;
+        }
 
-    .document-button {
-      width: 100%;
-      min-height: 66px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 14px 18px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: var(--white);
-      color: var(--deep-green);
-      cursor: pointer;
+        .document-info h4 {
+            color: var(--text);
+            font-size: 14px;
+        }
 
-      transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        box-shadow 180ms ease,
-        background 180ms ease;
-    }
+        .document-info p {
+            color: var(--muted);
+            font-size: 12px;
+        }
 
-    .document-button:hover {
-      transform: translateY(-2px);
-      border-color: rgba(8, 116, 67, 0.3);
-      box-shadow:
-        0 12px 30px rgba(6, 26, 20, 0.08);
-      background: #fbfdfb;
-    }
+        .button {
+            display: inline-flex;
+            min-height: 43px;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border: 0;
+            border-radius: 9px;
+            background: var(--green);
+            color: var(--white);
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
 
-    .document-icon {
-      flex: 0 0 42px;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: rgba(200, 234, 128, 0.28);
-      color: var(--deep-green);
-    }
+        .button:hover {
+            background: var(--primary);
+        }
 
-    .document-icon svg {
-      width: 21px;
-      height: 21px;
-    }
+        .button:focus-visible {
+            outline: 3px solid var(--yellow);
+            outline-offset: 3px;
+        }
 
-    .document-info {
-      flex: 1;
-      min-width: 0;
-    }
+        .button.secondary {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--primary);
+        }
 
-    .document-name {
-      display: block;
-      font-weight: 800;
-      font-size: 0.94rem;
-      margin-bottom: 3px;
-    }
+        .button.secondary:hover {
+            background: #F0F5F1;
+        }
 
-    .document-description {
-      display: block;
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
+        .notice {
+            margin-top: 18px;
+            padding: 15px;
+            border: 1px solid #D5E8D9;
+            border-radius: 12px;
+            background: #F0F8F1;
+            color: #245B35;
+            font-size: 13px;
+        }
 
-    .download-icon {
-      flex: 0 0 auto;
-      color: var(--green);
-    }
+        .notice.warning {
+            border-color: #F0DE9B;
+            background: #FFF9E5;
+            color: #755A00;
+        }
 
-    .download-icon svg {
-      width: 20px;
-      height: 20px;
-    }
+        .notice.error {
+            border-color: #F1C7C4;
+            background: #FFF3F2;
+            color: var(--danger);
+        }
 
-    .no-documents {
-      display: none;
-      padding: 18px;
-      border-radius: 14px;
-      background: #fff8e8;
-      color: #795b13;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
 
-    .actions {
-      margin-top: 34px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+        .actions .button {
+            flex: 1;
+        }
 
-    .btn {
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 750;
-      font-size: 0.9rem;
+        .status-panel {
+            padding: 44px 24px;
+            text-align: center;
+        }
 
-      transition:
-        transform 180ms ease,
-        opacity 180ms ease;
-    }
+        .loader {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 18px;
+            border: 4px solid #DCE8DF;
+            border-top-color: var(--green);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
-    .btn-primary {
-      background: var(--deep-green);
-      color: var(--white);
-    }
+        .status-panel h2 {
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 22px;
+        }
 
-    .btn-secondary {
-      background: #eef4f1;
-      color: var(--deep-green);
-    }
+        .status-panel p {
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
 
-    .footer-note {
-      margin-top: 30px;
-      color: var(--muted);
-      font-size: 0.75rem;
-      line-height: 1.6;
-    }
+        .footer {
+            padding: 22px 12px 0;
+            color: var(--muted);
+            font-size: 12px;
+            text-align: center;
+        }
 
-    .loading {
-      padding: 50px 20px;
-      text-align: center;
-      color: var(--muted);
-    }
+        @media (max-width: 540px) {
+            body {
+                padding: 18px 12px;
+                align-items: flex-start;
+            }
 
-    .error-state {
-      display: none;
-    }
+            .brand {
+                margin-bottom: 18px;
+            }
 
-    @media (max-width: 640px) {
-      .page-header {
-        padding: 20px;
-      }
+            .hero {
+                padding: 30px 18px;
+            }
 
-      main {
-        padding: 20px 14px 50px;
-      }
+            .content {
+                padding: 21px 16px;
+            }
 
-      .success-card {
-        padding: 38px 20px;
-        border-radius: 22px;
-      }
+            .member-details {
+                gap: 9px;
+            }
 
-      .detail-row {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 5px;
-      }
+            .detail {
+                padding: 12px;
+            }
 
-      .detail-value {
-        text-align: left;
-      }
+            .detail-value {
+                font-size: 13px;
+            }
 
-      .actions {
-        flex-direction: column;
-      }
+            .document-item {
+                align-items: flex-start;
+                flex-direction: column;
+            }
 
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+            .document-item .button {
+                width: 100%;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .actions .button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-  <header class="page-header">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">ATH</span>
-      <span>Agro Trade Hub Africa</span>
-    </a>
-  </header>
-
-  <main>
-
-    <section class="success-card" id="successCard">
-
-      <div class="loading" id="loadingState">
-        Loading your registration...
-      </div>
-
-      <div id="successContent" hidden>
-
-        <div class="success-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M20 6 9 17l-5-5"></path>
-          </svg>
-        </div>
-
-        <div class="eyebrow">
-          Registration Complete
-        </div>
-
-        <h1>
-          Registration Successful
-        </h1>
-
-        <p class="intro" id="welcomeMessage">
-          Congratulations. Your Agro Trade Hub Africa membership
-          registration has been successfully completed.
-        </p>
-
-        <div class="member-details">
-
-          <div class="detail-row">
-            <span class="detail-label">
-              Membership Type
-            </span>
-
-            <span
-              class="detail-value"
-              id="membershipType"
-            >
-              —
-            </span>
-          </div>
-
-          <div class="detail-row">
-            <span class="detail-label">
-              Membership ID
-            </span>
-
-            <span
-              class="detail-value"
-              id="membershipId"
-            >
-              —
-            </span>
-          </div>
-
-          <div class="detail-row">
-            <span class="detail-label">
-              Certificate Number
-            </span>
-
-            <span
-              class="detail-value"
-              id="certificateNumber"
-            >
-              —
-            </span>
-          </div>
-
-        </div>
-
-        <div class="documents">
-
-          <h2 class="documents-title">
-            Your Membership Documents
-          </h2>
-
-          <p class="documents-subtitle">
-            Your official documents are ready.
-            Click a document to open it.
-          </p>
-
-          <div
-            class="document-list"
-            id="documentList"
-          >
-
-            <a
-              class="document-button"
-              id="certificateButton"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              hidden
-            >
-              <span class="document-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                  ></path>
-
-                  <path d="M14 2v6h6"></path>
-                  <path d="M8 13h8"></path>
-                  <path d="M8 17h6"></path>
-                </svg>
-              </span>
-
-              <span class="document-info">
-                <span class="document-name">
-                  Membership Certificate
-                </span>
-
-                <span class="document-description">
-                  Your official Agro Trade Hub Africa membership certificate
-                </span>
-              </span>
-
-              <span class="download-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 3v12"></path>
-                  <path d="m7 10 5 5 5-5"></path>
-                  <path d="M5 21h14"></path>
-                </svg>
-              </span>
-            </a>
-
-            <a
-              class="document-button"
-              id="farmerIdButton"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              hidden
-            >
-              <span class="document-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <rect
-                    x="3"
-                    y="5"
-                    width="18"
-                    height="14"
-                    rx="2"
-                  ></rect>
-
-                  <circle
-                    cx="8"
-                    cy="12"
-                    r="2"
-                  ></circle>
-
-                  <path d="M13 10h5"></path>
-                  <path d="M13 14h4"></path>
-                </svg>
-              </span>
-
-              <span class="document-info">
-                <span class="document-name">
-                  Farmer ID Card
-                </span>
-
-                <span class="document-description">
-                  Your official Agro Trade Hub Africa farmer identification card
-                </span>
-              </span>
-
-              <span class="download-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 3v12"></path>
-                  <path d="m7 10 5 5 5-5"></path>
-                  <path d="M5 21h14"></path>
-                </svg>
-              </span>
-            </a>
-
-          </div>
-
-          <div
-            class="no-documents"
-            id="noDocuments"
-          >
-            Your registration was completed successfully, but your
-            documents are not available yet. Please contact Agro Trade
-            Hub Africa support.
-          </div>
-
-        </div>
-
-        <div class="actions">
-
-          <a
-            href="membership.html"
-            class="btn btn-secondary"
-          >
-            Back to Membership
-          </a>
-
-          <a
-            href="index.html"
-            class="btn btn-primary"
-          >
-            Return Home
-          </a>
-
-        </div>
-
-        <p class="footer-note">
-          Please save your Membership ID and keep your downloaded
-          documents safely for future verification.
-        </p>
-
-      </div>
-
-      <div
-        class="error-state"
-        id="errorState"
-      >
-
-        <div class="success-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="9"
-            ></circle>
-
-            <path d="M12 8v4"></path>
-            <path d="M12 16h.01"></path>
-          </svg>
-        </div>
-
-        <div class="eyebrow">
-          Registration Information
-        </div>
-
-        <h1>
-          Registration Completed
-        </h1>
-
-        <p class="intro">
-          Your payment may have been completed, but we could not load
-          your membership documents. Please return to the membership
-          page or contact Agro Trade Hub Africa support.
-        </p>
-
-        <div class="actions">
-
-          <a
-            href="membership.html"
-            class="btn btn-primary"
-          >
-            Return to Membership
-          </a>
-
-          <a
-            href="index.html"
-            class="btn btn-secondary"
-          >
-            Return Home
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <div class="footer-brand">
-          <img class="footer-brand-logo" src="images/Ath2.jpeg" alt="Agro Trade Hub Africa logo" width="56" height="56">
-          <p class="wordmark footer-word">Agro Trade <span>Hub Africa</span></p>
-        </div>
-        <p>An initiative of Verneldos Global Services Ltd &amp; Ntonarche Acumen Network.</p>
-      </div>
-      <div>
-        <h4>Site</h4>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="programs.html">Programs</a>
-        <a href="membership.html">Membership</a>
-        <a href="gallery.html">Gallery</a>
-      </div>
-      <div>
-        <h4>Social media</h4>
-        <div class="footer-socials" aria-label="Agro Trade Hub Africa social media links">
-          <a class="social-icon" href="https://web.facebook.com/ATHALTD/#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-          <a class="social-icon" href="https://www.instagram.com/agrotradehubafrica/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          <a class="social-icon" href="https://www.linkedin.com/company/146681279/admin/dashboard/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-          <a class="social-icon" href="https://chat.whatsapp.com/IZgIjS7drH76raPpclbS1E" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-          <a class="social-icon" href="https://t.me/atha3752" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-          <a class="social-icon" href="https://www.youtube.com/channel/UC3WOC_rURSkI4AHO_O1oyGA" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="contact.html">Contact form</a>
-        <a href="contact.html#locations">Office locations</a>
-      </div>
-      <div>
-        <h4>Policies</h4>
-        <div class="policy-links">
-          <button type="button" data-policy="privacy">Privacy policy</button>
-          <button type="button" data-policy="cookies">Cookie policy</button>
-          <button type="button" data-policy="payments">Payment and refund policy</button>
-        </div>
-      </div>
-    </div>
-    <div class="wrap footer-bottom">
-      <p>&copy; 2026 Agro Trade Hub Africa.</p>
-      <div class="footer-credit">
-        <p><strong>Site is designed and maintained by NTONARCH ACUMEN NETWORK</strong></p>
-        <p><a href="https://www.ntonarch.com" target="_blank" rel="noopener">www.ntonarch.com</a> | <a href="mailto:ntonarch@gmail.com">ntonarch@gmail.com</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <dialog class="policy-dialog" id="policyDialog" aria-labelledby="policyTitle">
-    <div class="policy-dialog-content">
-      <button class="policy-close" id="policyClose" type="button" aria-label="Close policy"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-      <h2 id="policyTitle"></h2>
-      <div id="policyBody"></div>
-    </div>
-  </dialog>
-
-  <script src="policy.js"></script>
-
-  <script>
-    const API_BASE_URL =
-      window.location.hostname === "localhost" ||
-      window.location.hostname === "127.0.0.1"
-        ? "http://localhost:5000/api"
-        : "https://YOUR-BACKEND.onrender.com/api";
-
-    const MEMBERSHIP_NAMES = {
-      farmer: "Farmer Membership",
-
-      "cooperative-new":
-        "New Cooperative Membership",
-
-      "cooperative-old":
-        "Cooperative Membership Revalidation",
-
-      partner:
-        "Partner Membership",
-
-      investor:
-        "Investor Membership"
-    };
-
-    const params =
-      new URLSearchParams(
-        window.location.search
-      );
-
-    const registrationId =
-      params.get("registration");
-
-    const paymentStatus =
-      params.get("payment");
-
-    const loadingState =
-      document.getElementById(
-        "loadingState"
-      );
-
-    const successContent =
-      document.getElementById(
-        "successContent"
-      );
-
-    const errorState =
-      document.getElementById(
-        "errorState"
-      );
-
-    const membershipType =
-      document.getElementById(
-        "membershipType"
-      );
-
-    const membershipId =
-      document.getElementById(
-        "membershipId"
-      );
-
-    const certificateNumber =
-      document.getElementById(
-        "certificateNumber"
-      );
-
-    const certificateButton =
-      document.getElementById(
-        "certificateButton"
-      );
-
-    const farmerIdButton =
-      document.getElementById(
-        "farmerIdButton"
-      );
-
-    const noDocuments =
-      document.getElementById(
-        "noDocuments"
-      );
-
-    const welcomeMessage =
-      document.getElementById(
-        "welcomeMessage"
-      );
-
-    function showError() {
-      loadingState.hidden = true;
-      successContent.hidden = true;
-      errorState.style.display = "block";
-    }
-
-    function showSuccess() {
-      loadingState.hidden = true;
-      successContent.hidden = false;
-      errorState.style.display = "none";
-    }
-
-    function setupDocumentButton(
-      button,
-      documentData
-    ) {
-      if (!documentData?.url) {
-        button.hidden = true;
-        return false;
-      }
-
-      /*
-       * IMPORTANT:
-       *
-       * Do NOT use the HTML `download`
-       * attribute here.
-       *
-       * Cloudinary raw PDFs should be opened
-       * directly in a new browser tab.
-       */
-      button.href = documentData.url;
-
-      button.removeAttribute("download");
-
-      button.target = "_blank";
-
-      button.rel =
-        "noopener noreferrer";
-
-      button.hidden = false;
-
-      return true;
-    }
-
-    async function loadRegistration() {
-
-      if (
-        paymentStatus !== "success" ||
-        !registrationId
-      ) {
-        showError();
-        return;
-      }
-
-      try {
-
-        const endpoint =
-          `${API_BASE_URL}/payments/registration/` +
-          `${encodeURIComponent(
-            registrationId
-          )}/documents`;
-
-        const response =
-          await fetch(endpoint);
-
-        let result;
-
-        try {
-          result =
-            await response.json();
-        } catch {
-          throw new Error(
-            "Invalid response from server"
-          );
+    <main class="page">
+        <header class="brand">
+            <div class="brand-mark" aria-hidden="true">A</div>
+            <h1>Agro Trade Hub</h1>
+            <p>Connecting Agriculture. Empowering Communities.</p>
+        </header>
+
+        <section class="card" aria-live="polite">
+            <!-- LOADING -->
+            <div id="loadingState" class="status-panel">
+                <div class="loader" aria-hidden="true"></div>
+                <h2>Confirming Your Registration</h2>
+                <p>Please wait while we retrieve your membership details and documents.</p>
+            </div>
+
+            <!-- SUCCESS -->
+            <div id="successContent" class="hidden">
+                <div class="hero">
+                    <div class="success-icon" aria-hidden="true">✓</div>
+                    <h2>Registration Successful!</h2>
+                    <p id="welcomeMessage">
+                        Your membership details are ready.
+                    </p>
+                </div>
+
+                <div class="content">
+                    <h3 class="section-title">Your Membership Details</h3>
+
+                    <div class="member-details">
+                        <div class="detail full">
+                            <span class="detail-label">Full Name</span>
+                            <span class="detail-value" id="memberName">—</span>
+                        </div>
+
+                        <div class="detail">
+                            <span class="detail-label">Membership Type</span>
+                            <span class="detail-value" id="membershipType">—</span>
+                        </div>
+
+                        <div class="detail">
+                            <span class="detail-label">Membership ID</span>
+                            <span class="detail-value" id="membershipId">—</span>
+                        </div>
+
+                        <div class="detail full">
+                            <span class="detail-label">Certificate Number</span>
+                            <span class="detail-value" id="certificateNumber">—</span>
+                        </div>
+                    </div>
+
+                    <section class="documents-section">
+                        <h3 class="section-title">Your Membership Documents</h3>
+
+                        <p class="documents-intro">
+                            Your available documents are listed below. Select the appropriate button to open your PDF.
+                        </p>
+
+                        <div class="document-list">
+                            <!-- CERTIFICATE -->
+                            <div id="certificateItem" class="document-item hidden">
+                                <div class="document-info">
+                                    <div class="document-icon" aria-hidden="true">▤</div>
+                                    <div>
+                                        <h4>Membership Certificate</h4>
+                                        <p>Your official membership certificate</p>
+                                    </div>
+                                </div>
+
+                                <a
+                                    id="certificateButton"
+                                    class="button"
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Certificate ↗
+                                </a>
+                            </div>
+
+                            <!-- FARMER ID -->
+                            <div id="farmerIdItem" class="document-item hidden">
+                                <div class="document-info">
+                                    <div class="document-icon" aria-hidden="true">▣</div>
+                                    <div>
+                                        <h4>Farmer ID Card</h4>
+                                        <p>Your farmer membership identification</p>
+                                    </div>
+                                </div>
+
+                                <a
+                                    id="farmerIdButton"
+                                    class="button"
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Farmer ID ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="noDocuments" class="notice warning hidden">
+                            Your registration was retrieved, but no documents are available yet.
+                        </div>
+
+                        <div id="documentsPendingNotice" class="notice warning hidden">
+                            Your registration is confirmed, but your documents are still being prepared. Please try again shortly.
+                        </div>
+
+                        <div id="successNotice" class="notice hidden">
+                            Your membership information and available documents have been retrieved successfully.
+                        </div>
+                    </section>
+
+                    <div class="actions">
+                        <button id="retryButton" class="button secondary hidden" type="button">
+                            Retry Loading Documents
+                        </button>
+
+                        <a class="button secondary" href="index.html">
+                            Return to Homepage
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERROR -->
+            <div id="errorState" class="status-panel hidden">
+                <div class="success-icon" style="color: #B42318; border-color: #F1C7C4; background: #FFF3F2;" aria-hidden="true">!</div>
+                <h2>Unable to Load Registration</h2>
+                <p id="errorMessage">
+                    We could not retrieve your registration details.
+                </p>
+
+                <button id="retryErrorButton" class="button" type="button">
+                    Try Again
+                </button>
+
+                <div style="margin-top: 14px;">
+                    <a class="button secondary" href="index.html">
+                        Return to Homepage
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            &copy; <span id="currentYear"></span> Agro Trade Hub. All rights reserved.
+        </footer>
+    </main>
+
+    <script>
+        "use strict";
+
+        // Correct production API base URL.
+        const API_BASE_URL = "https://agtechbe.onrender.com/api";
+
+        const elements = {
+            loadingState: document.getElementById("loadingState"),
+            successContent: document.getElementById("successContent"),
+            errorState: document.getElementById("errorState"),
+            errorMessage: document.getElementById("errorMessage"),
+
+            memberName: document.getElementById("memberName"),
+            welcomeMessage: document.getElementById("welcomeMessage"),
+            membershipType: document.getElementById("membershipType"),
+            membershipId: document.getElementById("membershipId"),
+            certificateNumber: document.getElementById("certificateNumber"),
+
+            certificateItem: document.getElementById("certificateItem"),
+            certificateButton: document.getElementById("certificateButton"),
+
+            farmerIdItem: document.getElementById("farmerIdItem"),
+            farmerIdButton: document.getElementById("farmerIdButton"),
+
+            noDocuments: document.getElementById("noDocuments"),
+            documentsPendingNotice: document.getElementById("documentsPendingNotice"),
+            successNotice: document.getElementById("successNotice"),
+
+            retryButton: document.getElementById("retryButton"),
+            retryErrorButton: document.getElementById("retryErrorButton"),
+            currentYear: document.getElementById("currentYear")
+        };
+
+        elements.currentYear.textContent = new Date().getFullYear();
+
+        const params = new URLSearchParams(window.location.search);
+        const registrationId = params.get("registration");
+        const paymentStatus = params.get("payment");
+
+        function showOnly(state) {
+            elements.loadingState.classList.add("hidden");
+            elements.successContent.classList.add("hidden");
+            elements.errorState.classList.add("hidden");
+
+            state.classList.remove("hidden");
         }
 
-        if (
-          !response.ok ||
-          !result.success ||
-          !result.registration
-        ) {
-          throw new Error(
-            result.message ||
-            "Could not load registration"
-          );
+        function formatMembershipType(type) {
+            if (!type) return "—";
+
+            const names = {
+                farmer: "Farmer",
+                business: "Business",
+                group: "Group",
+                cooperative: "Cooperative",
+                partnership: "Partnership",
+                partner: "Partner",
+                investor: "Investor",
+                sponsor: "Sponsor"
+            };
+
+            const normalized = String(type).trim().toLowerCase();
+
+            return names[normalized] ||
+                normalized.replace(/[-_]/g, " ")
+                    .replace(/\b\w/g, character => character.toUpperCase());
         }
 
-        const registration =
-          result.registration;
+        function setDocumentLink(item, button, documentData, buttonText) {
+            // Never display a document button without a valid URL from the API.
+            const url = documentData?.url;
 
-        const name =
-          registration.name ||
-          registration["contact-name"] ||
-          registration.contactName ||
-          registration.fullName ||
-          registration.org ||
-          "Member";
+            if (typeof url !== "string" || !url.trim()) {
+                item.classList.add("hidden");
+                button.removeAttribute("href");
+                return false;
+            }
 
-        const type =
-          registration.type;
+            try {
+                const parsedUrl = new URL(url);
 
-        membershipType.textContent =
-          MEMBERSHIP_NAMES[type] ||
-          "Agro Trade Hub Africa Membership";
+                // Membership PDFs should be served over HTTPS.
+                if (parsedUrl.protocol !== "https:") {
+                    item.classList.add("hidden");
+                    button.removeAttribute("href");
+                    console.error("Rejected non-HTTPS document URL.");
+                    return false;
+                }
 
-        membershipId.textContent =
-          registration.membershipId ||
-          "—";
+                // Use the actual Cloudinary URL returned by the backend.
+                button.href = parsedUrl.href;
+                button.target = "_blank";
+                button.rel = "noopener noreferrer";
+                button.textContent = buttonText;
 
-        certificateNumber.textContent =
-          registration.certificateNumber ||
-          "—";
-
-        welcomeMessage.textContent =
-          `Congratulations, ${name}. ` +
-          `Your Agro Trade Hub Africa membership ` +
-          `registration has been successfully completed.`;
-
-        let documentCount = 0;
-
-        if (
-          setupDocumentButton(
-            certificateButton,
-            registration.documents?.certificate
-          )
-        ) {
-          documentCount++;
+                item.classList.remove("hidden");
+                return true;
+            } catch (error) {
+                item.classList.add("hidden");
+                button.removeAttribute("href");
+                console.error("Invalid document URL:", error);
+                return false;
+            }
         }
 
-        if (
-          type === "farmer" &&
-          setupDocumentButton(
-            farmerIdButton,
-            registration.documents?.farmerIdCard
-          )
-        ) {
-          documentCount++;
-        } else {
-          farmerIdButton.hidden = true;
+        function displayRegistration(registration, documentsReady) {
+            if (!registration || typeof registration !== "object") {
+                throw new Error("The API response did not contain registration details.");
+            }
+
+            const documents = registration.documents || {};
+
+            // Display the actual registration details returned by the API.
+            elements.memberName.textContent = registration.name || "Member";
+            elements.membershipType.textContent =
+                formatMembershipType(registration.type);
+
+            elements.membershipId.textContent =
+                registration.membershipId || "Not available";
+
+            elements.certificateNumber.textContent =
+                registration.certificateNumber ||
+                documents.certificate?.certificateNumber ||
+                "Not available";
+
+            elements.welcomeMessage.textContent =
+                `Welcome, ${registration.name || "member"}! Your registration details have been retrieved.`;
+
+            // Reset document state before processing the latest response.
+            elements.certificateItem.classList.add("hidden");
+            elements.farmerIdItem.classList.add("hidden");
+            elements.noDocuments.classList.add("hidden");
+            elements.documentsPendingNotice.classList.add("hidden");
+            elements.successNotice.classList.add("hidden");
+            elements.retryButton.classList.add("hidden");
+
+            // Extract each PDF URL from its correct location in the API response.
+            const certificateAvailable = setDocumentLink(
+                elements.certificateItem,
+                elements.certificateButton,
+                documents.certificate,
+                "View Certificate ↗"
+            );
+
+            const farmerIdAvailable = setDocumentLink(
+                elements.farmerIdItem,
+                elements.farmerIdButton,
+                documents.farmerIdCard,
+                "View Farmer ID ↗"
+            );
+
+            const hasDocuments = certificateAvailable || farmerIdAvailable;
+
+            if (hasDocuments) {
+                elements.successNotice.classList.remove("hidden");
+            } else if (documentsReady === false) {
+                elements.documentsPendingNotice.classList.remove("hidden");
+                elements.retryButton.classList.remove("hidden");
+            } else {
+                elements.noDocuments.classList.remove("hidden");
+                elements.retryButton.classList.remove("hidden");
+            }
+
+            showOnly(elements.successContent);
         }
 
-        if (documentCount === 0) {
-          noDocuments.style.display = "block";
-        } else {
-          noDocuments.style.display = "none";
+        async function loadRegistration() {
+            showOnly(elements.loadingState);
+
+            if (!registrationId) {
+                elements.errorMessage.textContent =
+                    "The registration ID is missing from the page URL. Please return to the payment confirmation link.";
+
+                showOnly(elements.errorState);
+                return;
+            }
+
+            if (paymentStatus && paymentStatus !== "success") {
+                elements.errorMessage.textContent =
+                    "The payment status is not successful. Please confirm your payment before accessing your membership documents.";
+
+                showOnly(elements.errorState);
+                return;
+            }
+
+            // Exact working endpoint:
+            // GET /api/payments/registration/:registrationId/documents
+            console.log(registrationId)
+            const endpoint =
+                `${API_BASE_URL}/payments/registration/${encodeURIComponent(registrationId)}/documents`;
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json"
+                    },
+                    cache: "no-store"
+                });
+
+                const rawResponse = await response.text();
+
+                let result;
+
+                try {
+                    result = JSON.parse(rawResponse);
+                } catch {
+                    throw new Error(
+                        `The backend returned an invalid JSON response (HTTP ${response.status}).`
+                    );
+                }
+
+                console.log("Membership documents API response:", result);
+
+                if (!response.ok || result.success !== true) {
+                    throw new Error(
+                        result.message ||
+                        result.error ||
+                        `Unable to retrieve registration details (HTTP ${response.status}).`
+                    );
+                }
+
+                // Use the registration object from the confirmed API response.
+                displayRegistration(
+                    result.registration,
+                    result.documentsReady
+                );
+
+            } catch (error) {
+                console.error("Failed to load membership registration:", error);
+
+                elements.errorMessage.textContent =
+                    error.message ||
+                    "A network error occurred while retrieving your membership details.";
+
+                showOnly(elements.errorState);
+            }
         }
 
-        showSuccess();
+        // Both retry buttons call the same API-loading function.
+        elements.retryButton.addEventListener("click", loadRegistration);
+        elements.retryErrorButton.addEventListener("click", loadRegistration);
 
-      } catch (error) {
-
-        console.error(
-          "Could not load membership documents:",
-          error
-        );
-
-        showError();
-      }
-    }
-
-    loadRegistration();
-  </script>
-
+        // Fetch the registration immediately when the page opens.
+        loadRegistration();
+    </script>
 </body>
 </html>
