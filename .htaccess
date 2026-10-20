@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^admin/admin\.html$ /admin [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[?\s]) [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+
+RewriteRule ^admin/$ /admin [R=301,L,NC]
+RewriteRule ^(about|services|programs|membership|membership-success|gallery|contact)/$ /$1 [R=301,L,NC]
+
+RewriteRule ^admin$ admin/admin.html [L,NC]
+RewriteRule ^(about|services|programs|membership|membership-success|gallery|contact)$ $1.html [L,NC]

@@ -81,24 +81,24 @@ main h3 > i,
 .footer-grid > div:nth-child(3) h4::before{content:"\f1e0";}
 .footer-grid > div:nth-child(4) h4::before{content:"\f095";}
 .footer-grid > div:nth-child(5) h4::before{content:"\f3ed";}
-.site-footer a[href="about.html"]::before,
-.site-footer a[href="services.html"]::before,
-.site-footer a[href="membership.html"]::before,
-.site-footer a[href="gallery.html"]::before,
-.site-footer a[href="contact.html"]::before,
-.site-footer a[href="contact.html#locations"]::before{
+.site-footer a[href="/about"]::before,
+.site-footer a[href="/services"]::before,
+.site-footer a[href="/membership"]::before,
+.site-footer a[href="/gallery"]::before,
+.site-footer a[href="/contact"]::before,
+.site-footer a[href="/contact#locations"]::before{
   display:inline-block;
   width:1.35em;
   font-family:"Font Awesome 6 Free";
   font-size:.8em;
   font-weight:900;
 }
-.site-footer a[href="about.html"]::before{content:"\f05a";}
-.site-footer a[href="services.html"]::before{content:"\f06c";}
-.site-footer a[href="membership.html"]::before{content:"\f0c0";}
-.site-footer a[href="gallery.html"]::before{content:"\f302";}
-.site-footer a[href="contact.html"]::before{content:"\f0e0";}
-.site-footer a[href="contact.html#locations"]::before{content:"\f3c5";}
+.site-footer a[href="/about"]::before{content:"\f05a";}
+.site-footer a[href="/services"]::before{content:"\f06c";}
+.site-footer a[href="/membership"]::before{content:"\f0c0";}
+.site-footer a[href="/gallery"]::before{content:"\f302";}
+.site-footer a[href="/contact"]::before{content:"\f0e0";}
+.site-footer a[href="/contact#locations"]::before{content:"\f3c5";}
 
 .policy-links{
   display:flex;
